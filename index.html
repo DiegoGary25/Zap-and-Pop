@@ -3,33 +3,48 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Neon arena platform shooter with foam cocoons and combo multipliers.">
-  <title>Neon Foam Arena</title>
+  <title>Neon Bubble Arena</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="game.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/constants.js" defer></script>
+  <script src="js/math.js" defer></script>
+  <script src="js/input.js" defer></script>
+  <script src="js/audio.js" defer></script>
+  <script src="js/physics.js" defer></script>
+  <script src="js/entities.js" defer></script>
+  <script src="js/spawn.js" defer></script>
+  <script src="js/maps.js" defer></script>
+  <script src="js/render.js" defer></script>
+  <script src="js/ui.js" defer></script>
+  <script src="js/game.js" defer></script>
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <div class="app">
-    <div class="stage">
-      <canvas id="game"></canvas>
+    <div class="stage" id="gameWrapper">
+      <canvas id="game" aria-label="Neon Bubble Arena"></canvas>
       <div class="hud" id="hud">
         <div>Score<br><span class="hudValue" id="score">0</span></div>
         <div>Wave<br><span class="hudValue" id="wave">1</span></div>
         <div>Lives<br><span class="hudValue" id="lives">3</span></div>
-        <div>Weapon<br><span class="hudValue" id="weapon">SMG</span></div>
+        <div>Weapon<br><span class="hudValue" id="weapon">Pistol</span></div>
       </div>
       <div id="multiplierBar">
         <div id="multiplierFill"></div>
         <div id="multiplierText">x1.0</div>
       </div>
       <div class="toast hidden" id="toast">SHOTGUN READY</div>
-      <div id="overlay" class="">
+      <div id="overlay">
         <div id="overlayBox">
           <div id="message">NEON FOAM</div>
-          <div id="submessage" class="overlaySub">Bubble foes and pop for points. A/D to move, W/Space to jump, Shift to dash. Mouse to aim, Left click shoot, Right click foam.</div>
-          <div id="overlayInfo" class="overlaySub"></div>
+          <div id="submessage" class="overlaySub">
+            Bubble foes with foam cocoons then pop them for points!
+            WASD/Arrows to move, Space to jump, Shift to dash.
+            Aim with the mouse, left-click to shoot.
+          </div>
+          <div class="overlaySub" id="overlayInfo"></div>
           <div class="actions">
-            <button id="playAgain">START</button>
+            <button id="playAgain" type="button">START</button>
           </div>
         </div>
       </div>
